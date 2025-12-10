@@ -1,68 +1,54 @@
-# Event Manager (Java Swing)
+# University Event Planning System
 
-A simple desktop Event Manager application implemented in Java (package `eventmanager`). The app provides a GUI for event and participant management with a login flow, splash screen, basic theming, and a local database helper. This repository contains the source code for the project.
+A comprehensive desktop application designed for managing university events and participants. Built with Java Swing, this system features a secure login, participant management, and local data persistence.
 
-**Project**: Java Swing Event Manager
+## Features
+- **User Authentication**: Secure login dialog with session management.
+- **Event Management**: Create and track university events.
+- **Participant Tracking**: Manage attendee details and records.
+- **Data Persistence**: Local database integration via `DatabaseHelper`.
+- **Custom UI**: Includes a splash screen and basic theming support.
 
-**Key files**:
-- `src/eventmanager/Main.java`: Application entry point.
-- `src/eventmanager/EventManagerFrame.java`: Main application window.
-- `src/eventmanager/LoginDialog.java`: Login dialog.
-- `src/eventmanager/SplashScreen.java`: Startup splash screen.
-- `src/eventmanager/DatabaseHelper.java`: Database access helper (see implementation for DB details).
-- `src/eventmanager/Participant.java`: Participant model.
-- `src/eventmanager/UniversityEvent.java`: Event model.
-- `src/eventmanager/Theme.java`: Theme and UI helper.
-- `data/settings.properties`: Application configuration file.
+## Project Structure
+The project is organized as follows:
+- `src/eventmanager/`: Source code package.
+  - `Main.java`: Entry point.
+  - `EventManagerFrame.java`: Primary GUI dashboard.
+  - `DatabaseHelper.java`: Database connectivity and logic.
+  - `Participant.java` & `UniversityEvent.java`: Data models.
+- `data/`: Configuration files (e.g., `settings.properties`).
 
-**Features**
-- Login screen and session entry.
-- Splash screen on startup.
-- Event and participant model classes.
-- Local database helper for persistence (check `DatabaseHelper.java`).
-- Simple theming support via `Theme.java`.
+## Prerequisites
+- **Java Development Kit (JDK) 8** or higher.
+- (Optional) IntelliJ IDEA or Eclipse for development.
 
-**Requirements**
-- Java 8 or newer (JDK installed).
-- A Java IDE is recommended (IntelliJ IDEA, Eclipse) or the JDK command-line tools.
+## Getting Started
 
-**Build & Run (command-line)**
-
-Open a PowerShell prompt at the project root (folder that contains `src` and `data`) and run:
+### 1. Compilation
+Open a terminal in the project root and run:
 
 ```powershell
-# Create an output directory for compiled classes
+# Create output directory
 mkdir bin
 
-# Compile all Java sources into the bin directory
+# Compile sources
 javac -d bin src/eventmanager/*.java
+```
 
-# Run the application
+### 2. Running the Application
+Start the application using:
+
+```powershell
 java -cp bin eventmanager.Main
 ```
 
-Notes:
-- If the package or folder layout changes, adjust the `javac`/`java` commands accordingly.
-- Using an IDE will simplify compilation and running; import the project as a Java project and run `eventmanager.Main`.
+## Configuration
+Application settings can be found in `data/settings.properties`. You can adjust theme settings and other runtime configurations there.
 
-**Configuration**
-- Application settings are read from `data/settings.properties`.
-- Edit this file to change runtime settings (default location for DB, UI options, etc.). Check `DatabaseHelper.java` for database path/name used by the app.
+## License
+**Academic Work**
+This software is developed for academic purposes. It is intended for educational use and evaluation.
 
-**Project Structure**
-- `src/eventmanager` — Java source files (package `eventmanager`).
-- `data` — runtime configuration files (e.g., `settings.properties`).
-
-**Troubleshooting**
-- "Class not found" or "NoClassDefFoundError": ensure `javac` succeeded and you run `java` with `-cp bin` and the correct package-qualified main class: `eventmanager.Main`.
-- Database errors: inspect `DatabaseHelper.java` and `data/settings.properties` for the DB file path and permissions.
-- UI issues: check console output for stack traces; run from an IDE to get richer debugging.
-
-**Contributing**
-- Feel free to open issues or submit pull requests. For larger changes, please open an issue first to discuss the proposed change.
-
-**License**
-- This project does not include a formal license. Add one if you intend to share or distribute the code.
-
-**Contact / Questions**
-- For questions or help running the project, open an issue in the repo or contact the project owner directly.
+## Troubleshooting
+- **Class not found?** Ensure you run the command from the project root and include the `-cp bin` flag.
+- **Database issues?** Check `data/settings.properties` and ensure you have write permissions in the directory.
